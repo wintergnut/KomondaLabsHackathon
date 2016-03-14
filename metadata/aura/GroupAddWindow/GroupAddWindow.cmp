@@ -1,0 +1,110 @@
+<aura:component >
+
+<aura:attribute name="Group" type="Object"/>
+<aura:attribute name="PeopleList" type="Object[]"/>
+<aura:attribute name="minPrice" type="Decimal" default="0"/>
+<aura:attribute name="maxPrice" type="Decimal" default="15000"/>
+<aura:attribute name="minDistance" type="Decimal" default="0"/>
+<aura:attribute name="maxDistance" type="Decimal" default="3000"/>
+<aura:attribute name="ShowPeople" type="Boolean" default="false"/>
+
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+<aura:registerEvent name="doSave" type="c:GroupAddWindowSave"/>
+<aura:registerEvent name="doCancel" type="c:GroupAddWindowCancel"/>
+
+<ltng:require styles="/resource/jsslider/nouislider.min.css" scripts="/resource/jsslider/nouislider.min.js" afterScriptsLoaded="{!c.jsLoaded}"/>
+
+    	<span>
+            <div class="mainArea">
+                <div class="divHeader">Name Of The Group</div>
+                <ui:inputText class="padded" aura:id="groupNameInput"  updateOn="keyup"/>
+                <!--aura:renderIf isTrue="{!!v.Group}"-->
+                    <div class="divHeader">Number Of Members</div>
+                    <ui:inputNumber class="padded" aura:id="numberOfMembersInput" updateOn="keyup"/>
+                <!--/aura:renderIf-->
+                <div class="divHeader">Date Range</div>
+                <table style="table-layout: fixed; width:100%">
+                    <tr>
+                        <td>
+                            <ui:inputDate aura:id="Arrival" required="true" label="Arrival" class="field" displayDatePicker="true" />
+                        </td>
+                        <td>
+                            <ui:inputDate aura:id="Departure" required="true" label="Departure" class="field" displayDatePicker="true" />
+                        </td>
+                     </tr>
+                </table>
+                <div class="divHeader">Preferences</div>
+                <table style="table-layout: fixed; width:40%;display: inline-block;">
+                    <tr style="height:20px"></tr>
+                    <tr>
+                        <td rowspan="5" style="vertical-align:middle">
+                            {!v.maxPrice}<br/><br/><br/><br/>
+                            Price<br/>
+                            (EUR)<br/><br/><br/><br/>
+                            {!v.minPrice}
+                        </td>
+                        <td rowspan="5"><div class="twoWaySlider"/></td>
+                        <td rowspan="5" style="vertical-align:middle">
+                            {!v.maxDistance}
+                            <br/><br/><br/><br/>
+                            Distance<br/>
+                            (m)
+                            <br/><br/><br/><br/>
+                            {!v.minDistance}
+                        </td>
+                        <td rowspan="5"><div class="twoWaySlider"/></td>
+                    </tr>
+                </table>
+                <table style="width:40%;display: inline-block;text-align: right">
+                    <tr>
+                        <td/>
+                        <td >Adults</td>
+                        <td >
+                            <ui:inputSelect aura:id="Adults" multiple="false">
+                            <ui:inputSelectOption text="1" label="1"/>
+                            <ui:inputSelectOption text="2" label="2"/>
+                            </ui:inputSelect>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td >Children</td>
+                        <td >
+                            <ui:inputSelect aura:id="Children" multiple="false">
+                                <ui:inputSelectOption text="0" label="0"/>
+                                <ui:inputSelectOption text="1" label="1"/>
+                                <ui:inputSelectOption text="2" label="2"/>
+                            </ui:inputSelect>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td/><td style="text-align: right">VIP</td><td><ui:inputCheckbox aura:id="VIP" label=""/></td>
+                    </tr>
+                    <tr>
+                        <td/><td style="text-align: right">Pool</td><td><ui:inputCheckbox aura:id="Pool" label=""/></td>
+                    </tr>
+                    <tr>
+                        <td/><td style="text-align: right">Parking</td><td><ui:inputCheckbox aura:id="Parking" label=""/></td>
+                    </tr>
+                </table>
+                <!--aura:if isTrue="{!v.Group}">
+                    <p>
+                        People
+                        <ui:button label="{!v.showPeople?'-':'+'}" press="{!c.togglePeople}" />
+                    </p>
+                    <aura:if isTrue="{!v.showPeople}">
+                            <aura:iteration items="{!v.PeopleList}" var="person">
+                                <c:GroupAddWindowPersonLine InitObj="{!person}"/>
+                            </aura:iteration>
+                            <ui:button label="Delete" press="{!c.handleDelete}" />
+                            <ui:button label="Add" press="{!c.handleAdd}" />
+                    </aura:if>
+                </aura:if-->
+                <div style="width:100%;margin-top: 30px">
+                    <ui:button label="Cancel" press="{!c.handleCancel}"/>
+                    <ui:button label="Save" press="{!c.handleSave}" />
+                </div>
+            </div>
+    	</span>
+</aura:component>

@@ -1,0 +1,27 @@
+<aura:component controller="HackathonTestMainWindowController">
+    <aura:attribute name="CurrentPage" type="Integer" default="1"/>
+    <aura:attribute name="MinPage" type="Integer" default="1"/>
+    <aura:attribute name="MaxPage" type="Integer" default="3"/>
+    <aura:attribute name="GeoInfo" type="Object"/>
+    <aura:attribute name="Groups" type="Object[]"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="updateGeo" event="c:GeoDataChanged" action="{!c.updateGeo}"/>
+    <aura:handler name="updateGroups" event="c:GroupDataChanged" action="{!c.updateGroups}"/>
+
+    <aura:if isTrue="{!v.CurrentPage==1}">
+        <c:MapWindow InitGeoInfo="{!v.GeoInfo}"/>
+    </aura:if>
+
+    <aura:if isTrue="{!v.CurrentPage==2}">
+        <c:PartyCreationDisplay AuGroupList="{!v.Groups}"/>
+    </aura:if>
+
+    <aura:if isTrue="{!v.CurrentPage==3}">
+        <c:ResultOptions InitGeo="{!v.GeoInfo}" InitGroups="{!v.Groups}"/>
+    </aura:if>
+    <div>
+        <ui:button class="mainBtn PrevBtn" label="Back" press="{!c.showPrev}" disabled="{!v.CurrentPage==v.MinPage}"/>
+        <ui:button class="mainBtn NextBtn" label="Next" press="{!c.showNext}" disabled="{!v.CurrentPage==v.MaxPage}"/>
+    </div>
+</aura:component>

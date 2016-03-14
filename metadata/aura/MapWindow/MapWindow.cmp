@@ -1,0 +1,17 @@
+<aura:component controller="HackathonTestMainWindowController">
+	<ltng:require styles="/resource/leaflet/leaflet.css" /> 
+    <ltng:require scripts="/resource/leaflet/leaflet.js,/resource/geocoder/l.control.geosearch.js,/resource/geocoder/l.geosearch.provider.openstreetmap.js" afterScriptsLoaded="{!c.jsLoaded}" />
+
+    <aura:attribute name="DraggingCircle" type="Boolean" default="false"/>
+    <aura:attribute name="DragStartLatLong" type="Object"/>
+    <aura:attribute name="InitGeoInfo" type="Object"/>
+
+    <aura:registerEvent name="updateGeo" type="c:GeoDataChanged"/>
+
+	<div class="map" id="map" aura:id="map"></div>
+	<div class="topElements">
+    	<ui:inputText class="addressInput" aura:id="addressInput" updateOn="keyup"/>
+    	<ui:button class="SearchButton" label="" press="{!c.searchGeoCode}"/>
+    </div>
+    <ui:outputText aura:id="addressOutput" value=""/>
+</aura:component>

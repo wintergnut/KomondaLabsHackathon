@@ -1,0 +1,21 @@
+<aura:component >
+	<aura:attribute name="currentGroup" type="Object"/>
+    <aura:attribute name="currentGroupNumber" type="Integer"/>
+	<aura:attribute name="showGroupWindow" type="Boolean"/>
+	<aura:attribute name="selected" type="Boolean" default="false"/>
+
+	<aura:registerEvent name="triggerRecalculateInParent" type="c:RecalculateParamsOfSelected"/>
+    <aura:registerEvent name="deleteGroup" type="c:PartyCreationLineDeleteGroup"/>
+
+	<aura:handler name="doSave" event="c:GroupAddWindowSave" action="{!c.doSave}"/>
+    <aura:handler name="doCancel" event="c:GroupAddWindowCancel" action="{!c.doCancel}"/>
+
+	<tr aura:id="mainLine" onclick="{!c.handleSelect}" style="background-color: #BBBBBB">
+        <td>{!v.currentGroup.Name}</td>
+		<td>{!v.currentGroup.PeopleList.length}</td>
+		<td> <ui:button label="edit" press="c.doEdit"/><ui:button label="delete" press="c.doDelete"/></td>
+    </tr>
+    <aura:if isTrue="{!v.showGroupWindow}">
+    	<c:GroupAddWindow Group="{!v.currentGroup}"/>
+    </aura:if>
+</aura:component>

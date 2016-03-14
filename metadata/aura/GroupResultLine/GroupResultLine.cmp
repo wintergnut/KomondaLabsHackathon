@@ -1,0 +1,26 @@
+<aura:component extends="c:ResultLine">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:attribute name="DateLine" type="String"/>
+
+    <table style="table-layout: fixed;background-color: #AAAAAA;width: 100%;" class="slds-scrollable--y">
+        <tr style="height:30px;font-weight: bold;font-size: 25px;color: white;background-color:#ff9900">
+            <td style="width:33%;padding-left: 5%">
+                {!v.InitObj.Name}
+            </td>
+            <td>{!v.DateLine}</td>
+        </tr>
+        <!--aura:if isTrue="{!v.ShowDetails}"-->
+            <aura:iteration items="{!v.InitList}" var="person">
+                <aura:if isTrue="{!person.Hotel}">
+                <tr>
+                    <td/>
+                    <td>
+                        <c:PeopleResultLine InitObj="{!person}"/>
+                    </td>
+                </tr>
+                </aura:if>
+            </aura:iteration>
+        <!--/aura:if-->
+    </table>
+</aura:component>

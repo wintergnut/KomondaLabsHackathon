@@ -1,0 +1,44 @@
+<aura:component extends="c:ResultLine">
+	<table style="table-layout: fixed;background-color: #AAAAAA;width: 100%;">
+        <tr style="height:30px;font-weight: bold;font-size: 25px;color: white;background-color:#ffcc80">
+            <td style="width:33%">
+                {!v.InitObj.Name}
+            </td>
+            <td><!--ui:button label="{!v.ShowDetails==true?'-':'+'}" press="{!c.toggleVisibility}"/--></td>
+        </tr >
+        <!--aura:if isTrue="{!v.ShowDetails}"-->
+        	<tr style="background-color:background-color:#ffebcc">
+        		<td>
+        			Hotel:
+        		</td>
+        		<td>
+        			{!v.InitObj.Hotel}
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>
+        			Room:
+        		</td>
+        		<td>
+        			{!v.InitObj.Room}
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>
+        			Total Price:
+        		</td>
+        		<td>
+        			€{!v.InitObj.Rate} 
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>
+        			Rating:
+        		</td>
+        		<td>
+        			{!v.InitObj.Rating}
+        		</td>
+        	</tr>
+        <!--/aura:if-->
+    </table>
+</aura:component>

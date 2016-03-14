@@ -1,0 +1,54 @@
+{
+    "HackathonHotelsBedController.cls": {
+        "createdById": "00558000000UrDQAA0", 
+        "createdByName": "Fedor Golovanov", 
+        "createdDate": "2016-03-12 16:41:42", 
+        "fileName": "unpackaged/classes/HackathonHotelsBedController.cls", 
+        "fullName": "HackathonHotelsBedController", 
+        "id": "01p58000002qf5JAAQ", 
+        "lastModifiedById": "00558000000UrDQAA0", 
+        "lastModifiedByName": "Fedor Golovanov", 
+        "lastModifiedDate": "2016-03-13 16:03:21", 
+        "mmState": "clean", 
+        "type": "ApexClass"
+    }, 
+    "HackathonTestMainWindowController.cls": {
+        "createdById": "00558000000UrDQAA0", 
+        "createdByName": "Fedor Golovanov", 
+        "createdDate": "2016-03-12 16:42:51", 
+        "fileName": "unpackaged/classes/HackathonTestMainWindowController.cls", 
+        "fullName": "HackathonTestMainWindowController", 
+        "id": "01p58000002qf5FAAQ", 
+        "lastModifiedById": "00558000000UrDQAA0", 
+        "lastModifiedByName": "Fedor Golovanov", 
+        "lastModifiedDate": "2016-03-13 15:12:56", 
+        "mmState": "clean", 
+        "type": "ApexClass"
+    }, 
+    "HackatonHotelsBedResponceMock.cls": {
+        "createdById": "00558000000UrDQAA0", 
+        "createdByName": "Fedor Golovanov", 
+        "createdDate": "2016-03-12 16:40:49", 
+        "fileName": "unpackaged/classes/HackatonHotelsBedResponceMock.cls", 
+        "fullName": "HackatonHotelsBedResponceMock", 
+        "id": "01p58000002qf5EAAQ", 
+        "lastModifiedById": "00558000000UrDQAA0", 
+        "lastModifiedByName": "Fedor Golovanov", 
+        "lastModifiedDate": "2016-03-12 16:41:11", 
+        "mmState": "clean", 
+        "type": "ApexClass"
+    }, 
+    "HackatonHotelsBedResponseWrapper.cls": {
+        "createdById": "00558000000UrDQAA0", 
+        "createdByName": "Fedor Golovanov", 
+        "createdDate": "2016-03-12 16:39:55", 
+        "fileName": "unpackaged/classes/HackatonHotelsBedResponseWrapper.cls", 
+        "fullName": "HackatonHotelsBedResponseWrapper", 
+        "id": "01p58000002qf59AAA", 
+        "lastModifiedById": "00558000000UrDQAA0", 
+        "lastModifiedByName": "Fedor Golovanov", 
+        "lastModifiedDate": "2016-03-12 16:40:16", 
+        "mmState": "clean", 
+        "type": "ApexClass"
+    }
+}

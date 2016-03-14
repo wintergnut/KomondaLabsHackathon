@@ -1,0 +1,13 @@
+{
+    "username": "fgolovanov@aquivalabs.com", 
+    "environment": "production", 
+    "project_name": "MMHackathonOrg", 
+    "workspace": "/Users/Wintergnut/Dropbox/EclipseWorkspace", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "81XBWSRI9VV76ATM5R9A5DG03P0W19HC", 
+    "metadata_container": "1dc58000000ThoEAAS", 
+    "subscription": [
+        "ApexClass"
+    ]
+}

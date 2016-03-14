@@ -1,0 +1,18 @@
+<aura:component extends="c:ResultLine">
+    <table>
+	   <tr>
+            <td>{!v.InitObj.Name}</td>
+            <td><ui:button label="{!v.ShowDetails==true?'-':'+'}" press="{!c.toggleVisibility}"/></td>
+        </tr>
+        <aura:if isTrue="{!v.ShowDetails}">
+       	    <tr>
+			     <td></td>
+			     <td>
+				    <aura:iteration items="{!v.InitList}" var="group">
+        			     <c:GroupResultLine InitObj="{!group}" InitList="{!group.peopleList}"/>
+				    </aura:iteration>
+			     </td>
+            </tr>
+        </aura:if>
+    </table>
+</aura:component>

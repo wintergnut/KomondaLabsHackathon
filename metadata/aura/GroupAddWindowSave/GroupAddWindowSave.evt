@@ -1,0 +1,19 @@
+<aura:event type="COMPONENT">
+    <aura:attribute name="groupName" type="String"/>
+    <aura:attribute name="membersNumber" type="Integer"/>
+
+	<aura:attribute name="arrival" type="Date"/>
+	<aura:attribute name="departure" type="Date"/>
+	<aura:attribute name="minPrice" type="Decimal"/>
+	<aura:attribute name="maxPrice" type="Decimal"/>
+	<aura:attribute name="minDistance" type="Decimal"/>
+	<aura:attribute name="maxDistance" type="Decimal"/>
+	<aura:attribute name="Adults" type="Integer"/>
+	<aura:attribute name="Children" type="Integer"/>
+	<aura:attribute name="VIP" type="Boolean"/>
+	<aura:attribute name="Pool" type="Boolean"/>
+	<aura:attribute name="Parking" type="Boolean"/>
+
+    <aura:attribute name="peopleList" type="Object[]"/>
+    <aura:attribute name="group" type="Object"/>
+</aura:event>

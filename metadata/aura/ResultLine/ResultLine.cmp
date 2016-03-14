@@ -1,0 +1,8 @@
+<aura:component extensible="true">
+<aura:attribute name="InitObj" type="Object"/>
+<aura:attribute name="InitList" type="Object[]"/>
+<aura:attribute name="ShowDetails" type="Boolean" default="false"/>
+<aura:attribute name="Selected" type="Boolean" default="false"/>
+<aura:attribute name="MbDown" type="Boolean" default="false"/>
+{!v.body}
+</aura:component>

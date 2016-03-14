@@ -1,0 +1,24 @@
+<aura:component controller="HackathonTestMainWindowController">
+	<aura:attribute name="InitOptionsList" type="Object[]"/>
+	<aura:attribute name="CurrentlySelectedOption" type="Integer" default="0"/>
+    <aura:attribute name="InitGeo" type="Object"/>
+    <aura:attribute name="InitGroups" type="Object"/>
+    <aura:attribute name="Response" type="String"/>
+    <aura:attribute name="ShowSplash" type="Boolean" default="false"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+	<div class="mainTable">
+        <div class="header">RESULTS</div>
+        <!--div style="height:30px"/-->
+        <div style="overflow-y: auto;height:720px;" class="slds-scrollable--y">
+            <aura:iteration items="{!v.InitGroups}" var="group">
+                <c:GroupResultLine InitObj="{!group}" InitList="{!group.PeopleList}"/>
+            </aura:iteration>
+        </div>
+	</div>
+    <aura:renderIf isTrue="{!v.ShowSplash}">
+        <div class="splashScreen"></div>
+    </aura:renderIf>
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:component >
+   <aura:attribute name="InitPropertyList" type="Object[]"/>
+
+    <aura:iteration items="{!v.InitPropertyList}" var="property">
+        <c:PropertyResultLine InitObj="{!property}" InitList="{!property.groupList}" ShowDetails="true"/>
+	</aura:iteration>
+</aura:component>

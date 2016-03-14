@@ -1,0 +1,34 @@
+<aura:component controller="HackathonTestMainWindowController">
+    <aura:attribute name="AuGroupList" type="Object[]"/>
+    <aura:attribute name="showGroupWindow" type="Boolean"/>
+	<aura:attribute name="numSelected" type="Integer" />
+    <aura:attribute name="PeopleListToSendToServer" type="Object[]"/>
+
+    <aura:handler name="doSave" event="c:GroupAddWindowSave" action="{!c.handleNewGroupSave}"/>
+    <aura:handler name="doCancel" event="c:GroupAddWindowCancel" action="{!c.HideGroupWindow}"/>
+    <aura:handler name="triggerRecalculateInParent" event="c:RecalculateParamsOfSelected" action="{!c.RecalculateSelected}"/>
+    <aura:handler name="deleteGroup" event="c:PartyCreationLineDeleteGroup" action="{!c.handleDelete}"/>
+
+    <aura:registerEvent name="updateGroups" type="c:GroupDataChanged"/>
+
+    <div class="mainColumn">
+        <div class="header">ADD GROUPS OF GUESTS</div>
+        <div style="height:50px"></div>
+        <table style="table-layout: fixed;background-color: #ffb366;padding:20px 0;width:100%;font-size: 20px">
+                    <td style=";text-align: center">Group Name</td>
+                    <td style=";text-align: center"># Of Members</td>
+                    <td style=";text-align: center"></td>
+        </table>
+            <table class="MainGroupTable">
+                <aura:iteration items="{!v.AuGroupList}" var="group" indexVar="groupNumber">
+                    <c:PartyCreationLine aura:id="PCL" currentGroup="{!group}"/>
+		      </aura:iteration>
+            </table>
+        <div style="height:20px"></div>
+        <ui:button label="CreateGroup" press="{!c.CreateGroup}" />
+    
+        <aura:if isTrue="{!v.showGroupWindow}">
+    	   <c:GroupAddWindow />
+        </aura:if>
+    </div>
+</aura:component>

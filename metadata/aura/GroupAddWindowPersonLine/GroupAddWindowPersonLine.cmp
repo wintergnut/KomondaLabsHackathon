@@ -1,0 +1,18 @@
+<aura:component extends="c:ResultLine">
+<aura:attribute name="iterationNumber" type="Integer"/>
+
+<aura:registerEvent name="md" type="c:GroupAddWindowPersonLineMouseDown"/>
+
+<aura:handler event="c:GroupAddWindowPersonLineMouseDown" action="{!c.handleMouseDown}"/>
+<aura:handler event="c:GroupAddWindowPersonLineMouseUp" action="{!c.handleMouseUp}"/>
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+		<tr onmousedown="{!c.fireMouseDown}" onmouseover="{!c.handleHover}">
+			<td>
+				{!v.InitObj.Name}
+			</td>
+			<td>
+				{!v.InitObj.Selected}
+			</td>
+		</tr>
+</aura:component>
